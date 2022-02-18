@@ -1,0 +1,277 @@
+*
+    margin: 0
+    padding: 0
+
+body,html
+    overflow-x: hidden
+    background-color: #000
+    font-family: 'Artypa'
+    cursor: none
+@import "_custom-bs.sass"
+@import "_animation.sass"
+@import "_fonts.sass"
+
+//Header
+.site-header
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    z-index: 3
+    .gt-row
+        justify-content: center
+        .site-branding
+            width: 230px
+            position: relative
+            z-index: 1
+            svg
+                width: 100%
+.nav-menu
+    width: 100%
+    position: absolute
+    z-index: 3
+.menu-overlay 
+	position: absolute 
+	width: 100% 
+.block
+    position: absolute
+    width: 0%
+    height: 100vh
+    background: #101010
+.b1 
+	left: 0 
+.b2 
+	left: 25% 
+.b3 
+	left: 50% 
+.b4 
+	left: 75% 
+.strip
+    position: absolute
+    width: 1px
+    height: 100vh
+    background: rgba(255, 255, 255, 0.46)
+    transition: 1.2s
+.one 
+	left: 25% 
+.two 
+	left: 50% 
+.three 
+	left: 75% 
+ul 
+	margin: 0 
+	padding: 0
+	z-index: 1 
+	list-style: none 
+li 
+	padding: 5vh 0 
+	color: #fff 
+	font-size: 36px 
+	font-weight: 500 
+.menu-btn 
+    position: fixed
+    right: 30px
+    top: 30px
+    height: 70px
+    width: 70px
+    background: transparent
+    border: 2px solid #fff
+    border-radius: 100%
+    cursor: pointer
+    span    
+        width: 40px
+        height: 3px
+        background: #fff
+        display: block
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%) rotate(180deg)
+        transition: 1.5s
+        &:first-child
+            top: 25px
+        &:last-child
+            bottom: 22px
+            top: unset
+            
+
+.menu
+    position: absolute
+    top: 0
+    right: -25em
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 25%;
+    height: 100vh;
+    text-align: center;
+    transition: 2.5s
+    &::after
+        content: ""
+        position: absolute
+        top: 0
+        right: 0
+        width: 0
+        height: 100%
+        background: #638ea2
+        opacity: 1
+        transition: 1.5s
+        transition-delay: 1.5s
+.toggle-menu
+    .strip
+        height: 0
+        transition: 1.2s
+    .menu
+        right: 0em
+        transition: 1.2s
+        &::after
+            width: 100%
+            transition: 1.5s
+    .menu-btn
+        span
+            transition: 1.5s
+            opacity: 0
+            &:first-child
+                transform: translate(-50%, -50%) rotate(-130deg)
+                top: 50%
+                transition: 1.5s
+                opacity: 1
+                width: 100px
+            &:last-child
+                top: 50%
+                transform: translate(-50%, -50%) rotate(-220deg)
+                transition: 1.5s
+                opacity: 1
+                width: 100px 
+// main-banner
+.banner
+    height: 100vh
+    width: 100%
+    background-size: cover
+    background-position: center
+    .gt-row
+        align-items: flex-end
+        height: 100vh
+.tit
+    color: #000
+    background: #fff
+    padding: 53px 43px 70px
+    overflow: hidden
+    max-width: 395px
+    position: absolute
+    bottom: 0
+    z-index: 99
+    h2
+        font-size: 53px
+        line-height: 70px
+        margin-bottom: 17px
+    .banner-text
+        height: 90px
+        overflow: hidden
+// Slider
+.slider 
+	position: relative 
+	top: 0 
+	left: 0 
+	width: 100vw 
+	height: 100vh 
+	transition: .5s ease-in-out 
+	* 
+		outline: none 
+	.item 
+		position: relative 
+		z-index: 1 
+		width: 100vw 
+		height: 100vh 
+		svg 
+			position: absolute 
+			top: 0 
+			left: 0 
+			width: 100vw 
+			height: 100vh 
+			z-index: 1 
+.circle
+    position: absolute
+    top: 0
+    left: 0
+.down 
+	.slider 
+		transform: scale(0.9) 
+		.item 
+			.tit 
+				opacity: 0 
+#slider-1 
+	position: relative 
+	z-index: 2 
+	top: 0 
+	left: 0 
+#slider-2 
+	position: relative 
+	z-index: 2 
+	top: 0 
+	left: 0 
+	transform: scale(1) !important 
+	pointer-events: none
+.cursor
+    pointer-events: none
+    position: absolute
+    width: 30px
+    height: 30px
+    margin-top: -15px
+    margin-left: -15px
+    border-radius: 50%
+    background: rgba(255, 255, 255, 0.2)
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05)
+    transition: transform ease-in-out .2s, background ease-in-out .2s
+    transform: translateZ(0)
+    z-index: 100
+    left: -9999px
+    &::before
+        content: ''
+        position: absolute
+        border-left: 6px solid rgba(255, 255, 255, 0.5)
+        border-top: 6px solid transparent
+        border-bottom: 6px solid transparent
+        top: 10px
+        left: 52px
+        opacity: 0
+        transition: left ease-in-out .1s, opacity ease-in-out .2s
+    &::after
+        content: ''
+        position: absolute
+        border-right: 6px solid rgba(255, 255, 255, 0.5)
+        left: -27px
+        border-top: 6px solid transparent
+        border-bottom: 6px solid transparent
+        top: 10px
+        opacity: 0
+        transition: left ease-in-out .1s, opacity ease-in-out .2s
+.the-most 
+	position: fixed 
+	z-index: 10 
+	bottom: 0 
+	left: 0 
+	width: 50vw 
+	max-width: 100px 
+	padding: 10px 
+	img 
+		max-width: 100%     
+
+// about-us
+.about-us
+    position: relative
+    float: left
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100vw
+    height: 100vh
+    z-index: 1
+    div
+        width: 50vw
+        text-align: center
+    .about-img
+        background-size: cover
+        background-position: center
+        height: 100vh
+        width: 50vw
